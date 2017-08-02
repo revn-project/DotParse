@@ -1,9 +1,14 @@
-﻿namespace DotParse.Input
+﻿using System;
+using System.Runtime.InteropServices;
+
+namespace DotParse.Input
 {
-    public interface IPosition
+    public interface IPosition : IComparable<IPosition>
     {
-        int Line { get; set; }
+        int Line { get; }
 
+        int Column { get; }
 
+        string LongString { get; }
     }
 }
