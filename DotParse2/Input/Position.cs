@@ -1,8 +1,19 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DotParse.Utils;
 
 namespace DotParse.Input
 {
+    public interface IPosition : IComparable<IPosition>
+    {
+        int Line { get; }
+
+        int Column { get; }
+
+        string LongString { get; }
+    }
+
+
     public abstract class Position : IPosition
     {
         public static readonly Position NoPosition = new NoPositionImpl();
